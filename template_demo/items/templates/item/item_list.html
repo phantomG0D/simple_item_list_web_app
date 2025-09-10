@@ -3,12 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #ffd700;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        li:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
+            li { padding: 0.7rem 1.2rem; font-size: 1rem; }
+        }
+    </style>
 </head>
 <body>
     <h1>{{ title }}</h1>
 
     {% if user_authenticated %}
-        <p>Welcome, {{ user_name }}!</p>
+        <p>Welcome, {{ user_name }}! 👊</p>
     {% else %}
         <p>Please log in to see your items.</p>
     {% endif %}
