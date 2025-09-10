@@ -16,7 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from items.views import item_list
+from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  # leave admin alone
+    path('', include('items.urls')),  # route everything else to items app
 ]
+
+
+from django.contrib import admin
+
+
+
